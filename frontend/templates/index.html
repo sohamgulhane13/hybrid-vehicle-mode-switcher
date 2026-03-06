@@ -1,0 +1,122 @@
+<!-- Main HTML file -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hybrid Vehicle Mode Switcher</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hybrid Vehicle Mode Switcher</h1>
+            <p>Intelligent switching between engine and electric modes</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="control-panel">
+                <h2>Vehicle Controls</h2>
+                <div class="input-group">
+                    <label for="batteryLevel">Battery Level (%)</label>
+                    <input type="range" id="batteryLevel" min="0" max="100" value="75">
+                    <span id="batteryDisplay">75%</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="speed">Speed (km/h)</label>
+                    <input type="range" id="speed" min="0" max="120" value="40">
+                    <span id="speedDisplay">40 km/h</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="acceleration">Acceleration (%)</label>
+                    <input type="range" id="acceleration" min="0" max="100" value="30">
+                    <span id="accelerationDisplay">30%</span>
+                </div>
+
+                <button id="startSimulation" class="btn-primary">Start Simulation</button>
+                <button id="stopSimulation" class="btn-secondary">Stop Simulation</button>
+                <button id="saveData" class="btn-success">Save to Database</button>
+            </div>
+
+            <div class="visualization">
+                <h2>Vehicle Status</h2>
+                <div class="car-container">
+                    <div class="car">
+                        <div class="car-body"></div>
+                        <div class="wheel wheel-front"></div>
+                        <div class="wheel wheel-rear"></div>
+                        <div class="engine-engine" id="engineComponent"></div>
+                        <div class="battery-pack" id="batteryComponent"></div>
+                    </div>
+                </div>
+
+                <div class="mode-indicator">
+                    <div class="mode-display">
+                        <span id="currentMode" class="mode-text">ELECTRIC MODE</span>
+                        <div id="modeIcon" class="mode-icon electric"></div>
+                    </div>
+                </div>
+
+                <div class="status-panel">
+                    <div class="status-item">
+                        <span class="label">Current Mode:</span>
+                        <span id="currentModeText" class="value">Electric</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Power Source:</span>
+                        <span id="powerSource" class="value">Battery</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Efficiency:</span>
+                        <span id="efficiency" class="value">95%</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">CO2 Emission:</span>
+                        <span id="co2Emission" class="value">0 g/km</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="charts-section">
+            <h2>Performance Analytics</h2>
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>Mode Switching History</h3>
+                    <canvas id="modeChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Fuel Efficiency</h3>
+                    <canvas id="efficiencyChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="database-section">
+            <h2>Database Records</h2>
+            <div class="table-container">
+                <table id="recordsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Timestamp</th>
+                            <th>Battery Level</th>
+                            <th>Speed</th>
+                            <th>Mode</th>
+                            <th>Efficiency</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recordsBody">
+                    </tbody>
+                </table>
+            </div>
+            <button id="refreshData" class="btn-info">Refresh Data</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
