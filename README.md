@@ -1,91 +1,194 @@
+
+
 # 🚗 Hybrid Vehicle Mode Switcher
 
-A **Python-based intelligent vehicle simulation system** that demonstrates how hybrid vehicles dynamically switch between **Electric Mode, Hybrid Mode, and Engine Mode** based on real-time vehicle parameters such as speed, acceleration, battery level, and fuel usage.
+A **Python-based hybrid vehicle simulation and analytics system** that demonstrates how modern hybrid vehicles dynamically switch between **Electric Mode, Hybrid Mode, and Engine Mode** using vehicle parameters such as **speed, battery level, and acceleration**.
 
-The project simulates real-world **energy management systems used in hybrid vehicles** and provides **interactive visualization and analytics** for monitoring vehicle performance.
+The system combines **simulation, machine learning prediction, backend APIs, and visualization dashboards** to analyze vehicle performance and energy efficiency.
 
 ---
 
 # 📌 Project Overview
 
-The **Hybrid Vehicle Mode Switcher** project is designed to simulate how hybrid vehicles optimize energy consumption by switching between battery and fuel power sources.
+Hybrid vehicles use a combination of **electric motors and internal combustion engines** to optimize fuel efficiency and reduce emissions.
 
-The system processes real-time inputs and determines the most efficient driving mode while displaying vehicle performance metrics through an interactive user interface.
+This project simulates a **hybrid vehicle energy management system** that:
 
-This project demonstrates concepts related to:
+* Monitors real-time vehicle parameters
+* Predicts optimal driving mode
+* Stores vehicle records in a database
+* Generates analytics dashboards
 
-- Hybrid vehicle energy management
-- Real-time system monitoring
-- Backend logic processing
-- Data visualization
-- Intelligent system simulation
+The system integrates:
+
+⚙️ Backend simulation engine
+📊 Machine learning prediction
+🗄️ Database storage for vehicle records
+📈 Visualization dashboards for performance analysis
 
 ---
 
 # ⚙️ Key Features
 
-✔ Electric Mode, Hybrid Mode, and Engine Mode switching  
-✔ Real-time vehicle speed calculation  
-✔ Acceleration monitoring  
-✔ Battery percentage tracking  
-✔ Fuel consumption estimation  
-✔ Automatic and manual mode switching  
-✔ Live charts for performance monitoring  
-✔ Backend processing using Python  
-✔ Interactive user interface for monitoring vehicle data  
-✔ Performance analytics visualization  
+✔ Intelligent switching between **Electric, Hybrid, and Engine modes**
+✔ Simulation of realistic driving conditions
+✔ Machine learning model for **mode prediction (~95% accuracy)**
+✔ Real-time vehicle data recording
+✔ Backend API for analytics and visualization
+✔ Interactive charts for system analysis
+✔ Data storage using **SQLite database**
 
 ---
 
-# 🧠 System Workflow
+# 🧠 System Architecture
 
-The system follows a structured flow to simulate hybrid vehicle behavior:
-
-1. User interacts with the system interface.
-2. Inputs are sent to the **Python backend**.
-3. The backend processes the **mode switching logic**.
-4. Vehicle parameters are updated dynamically:
-   - Speed
-   - Acceleration
-   - Battery level
-   - Fuel usage
-5. Updated data is sent back to the **frontend interface**.
-6. Charts and analytics are updated in **real time**.
+```
+User Interface (Web Dashboard)
+        ↓
+Frontend (HTML / CSS / JS)
+        ↓
+Flask Backend API
+        ↓
+Simulation Engine
+        ↓
+SQLite Database
+        ↓
+Analytics & Visualization
+```
 
 ---
 
 # 🛠️ Tech Stack
 
 ## Backend
-- Python
-- Flask / Django
-- MySQL / SQLite
+
+* Python
+* Flask
+* SQLite
 
 ## Frontend
-- HTML
-- CSS
-- JavaScript
 
-## Data Visualization
-- Chart.js
+* HTML
+* CSS
+* JavaScript
 
-## Optional Machine Learning Components
-- Vehicle performance prediction
-- Battery usage forecasting
-- Fuel consumption prediction
+## Data Analysis
+
+* Pandas
+* NumPy
+* Scikit-learn
+
+## Visualization
+
+* Matplotlib
+* Seaborn
+* Chart.js
 
 ---
 
-# 📊 System Outputs
+# 🧠 Simulation Logic
 
-The system provides the following outputs:
+The **simulation engine** generates realistic driving scenarios including:
 
-- Vehicle mode switching based on battery and fuel levels
-- Real-time vehicle speed
-- Acceleration monitoring
-- Battery usage analytics
-- Fuel consumption analytics
-- Performance insights through interactive charts
+* Speed variations
+* Acceleration changes
+* Battery drain
+
+The optimal vehicle mode is determined using rule-based logic:
+
+**Electric Mode**
+
+* High battery level
+* Low speed
+
+**Hybrid Mode**
+
+* Medium battery level
+* Moderate speed
+
+**Engine Mode**
+
+* Low battery level
+* High speed
+
+The simulator calculates:
+
+* energy consumption
+* efficiency score
+* distance travelled
+* battery usage
+
+---
+
+# 📊 Machine Learning Model
+
+The project includes a **Random Forest classifier** trained on simulated driving data.
+
+### Model Inputs
+
+* Speed (km/h)
+* Battery Level (%)
+* Acceleration (m/s²)
+
+### Model Output
+
+Predicted vehicle mode:
+
+* Electric
+* Hybrid
+* Engine
+
+### Model Performance
+
+Accuracy achieved: **~95%**
+
+---
+
+# 📸 Project Visualizations
+
+### Speed, Battery & Acceleration Comparison
+
+<img src="images/comparison_plot.png" width="800">
+
+---
+
+### Mode Prediction Confusion Matrix
+
+<img src="images/confusion_matrix.png" width="500">
+
+---
+
+### Pairwise Feature Relationships
+
+<img src="images/pairplot.png" width="800">
+
+---
+
+### Mode Distribution
+
+<img src="images/mode_distribution.png" width="500">
+
+---
+
+# 🗄️ Database Design
+
+Vehicle simulation records are stored in an **SQLite database**.
+
+Each record contains:
+
+* timestamp
+* battery level
+* speed
+* acceleration
+* vehicle mode
+* efficiency score
+
+The database supports analytics queries such as:
+
+* mode frequency analysis
+* efficiency by driving mode
+* battery usage patterns
+* speed category analysis
 
 ---
 
@@ -94,101 +197,97 @@ The system provides the following outputs:
 ```
 Hybrid-Vehicle-Mode-Switcher
 │
-├── assets
-│   ├── database_setup.sql
-│   └── hybrid_vehicle.db
-│
 ├── backend
 │   ├── app.py
 │   └── simulation_engine.py
 │
 ├── frontend
 │   ├── static
-│   │   ├── css
-│   │   │   └── styles.css
-│   │   └── js
-│   │       └── script.js
 │   └── templates
-│       └── index.html
 │
-└── requirements.txt
+├── assets
+│   ├── database_setup.sql
+│   └── hybrid_vehicle.db
+│
+├── images
+│   ├── comparison_plot.png
+│   ├── confusion_matrix.png
+│   ├── pairplot.png
+│   └── mode_distribution.png
+│
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
 # 🚀 Setup Instructions
 
-### 1️⃣ Clone the Repository
+### 1️⃣ Clone the repository
 
-```bash
-git clone https://github.com/your-username/hybrid-vehicle-mode-switcher.git
+```
+git clone https://github.com/sohamgulhane13/hybrid-vehicle-mode-switcher.git
 cd hybrid-vehicle-mode-switcher
 ```
 
-### 2️⃣ Install Dependencies
+---
 
-```bash
+### 2️⃣ Install dependencies
+
+```
 pip install -r requirements.txt
 ```
 
-### 3️⃣ Run the Backend Server
+---
 
-```bash
+### 3️⃣ Run the backend server
+
+```
 python app.py
 ```
 
-### 4️⃣ Open the Application
-
-Open your browser and access the frontend interface.
-
 ---
 
-# 📈 Example System Metrics
+### 4️⃣ Open the application
 
-The dashboard displays real-time vehicle metrics, including:
+Open your browser and go to:
 
-- Speed (km/h)
-- Acceleration
-- Battery percentage
-- Fuel usage
-- Current vehicle mode
-
-All metrics are visualized using **dynamic charts** for better analysis.
+```
+http://localhost:5000
+```
 
 ---
 
 # 🎯 Learning Outcomes
 
-This project demonstrates practical understanding of:
+This project demonstrates practical knowledge of:
 
-- Hybrid vehicle system logic
-- Backend development using Python
-- REST-based communication between frontend and backend
-- Real-time data monitoring
-- Data visualization with charts
-- Intelligent system simulation
+* Hybrid vehicle powertrain systems
+* Backend development using Flask
+* Simulation-based system modeling
+* Machine learning for decision systems
+* Database-driven analytics
+* Data visualization for engineering analysis
 
 ---
 
 # 🔮 Future Improvements
 
-Potential enhancements for the system include:
+Possible extensions include:
 
-- Integration with real vehicle sensor datasets
-- Advanced machine learning prediction models
-- Improved UI dashboard
-- Mobile application interface
-- Real-time vehicle telemetry integration
-- AI-based energy optimization
+* Integration with **real CAN-bus vehicle data**
+* Deployment on **embedded automotive hardware**
+* Reinforcement learning for **adaptive driving optimization**
+* Real-time vehicle telemetry dashboards
 
 ---
 
-## Team Members
+# 👨‍💻 Team Members
 
-- Manas Kotian
-- Sujit Nirmal
-- Soham Gulhane
-- Aadesh Khamkar
+* Manas Kotian
+* Sujit Nirmal
+* Soham Gulhane
+* Aadesh Khamkar
 
 Guide: **Prof. Usha Jadhav**
 
@@ -196,4 +295,12 @@ Guide: **Prof. Usha Jadhav**
 
 # ⭐ Support
 
-If you found this project helpful, consider **starring the repository** to support the work.
+If you found this project useful, consider **starring the repository ⭐**
+
+---
+
+✅ After adding this README, your repo will look **much more professional for recruiters reviewing your resume**.
+
+---
+
+If you want, I can also help you create a **very strong README for your ESC Stability Control Simulator project**, which will make your **GitHub portfolio look like a real automotive engineering portfolio.**
