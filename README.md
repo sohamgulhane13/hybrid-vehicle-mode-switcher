@@ -274,8 +274,3 @@ If you found this project useful, consider **starring the repository ⭐**
 
 ---
 
-✅ After adding this README, your repo will look **much more professional for recruiters reviewing your resume**.
-
----
-
-If you want, I can also help you create a **very strong README for your ESC Stability Control Simulator project**, which will make your **GitHub portfolio look like a real automotive engineering portfolio.**
