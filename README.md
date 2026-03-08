@@ -146,29 +146,27 @@ Accuracy achieved: **~95%**
 
 # 📸 Project Visualizations
 
-### Speed, Battery & Acceleration Comparison
+## Speed, Battery Level & Acceleration Comparison
 
-<img src="images/comparison_plot.png" width="800">
-
----
-
-### Mode Prediction Confusion Matrix
-
-<img src="images/confusion_matrix.png" width="500">
+![Speed Battery Acceleration](images/comparisonplot.png)
 
 ---
 
-### Pairwise Feature Relationships
+## Machine Learning Confusion Matrix
 
-<img src="images/pairplot.png" width="800">
+![Confusion Matrix](images/confusionmatrix.png)
+
+---
+
+## Feature Relationship Analysis
+
+![Pairplot](images/paairplot.png)
 
 ---
 
-### Mode Distribution
+## Driving Mode Distribution
 
-<img src="images/mode_distribution.png" width="500">
-
----
+![Mode Distribution](images/modedistribution.png)
 
 # 🗄️ Database Design
 
